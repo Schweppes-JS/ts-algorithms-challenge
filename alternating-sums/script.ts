@@ -8,7 +8,7 @@ function alternatingSums(array: number[]): number[] {
     } else {
       oddSum += element;
     }
-  })
+  });
 
   return [evenSum, oddSum];
 }
