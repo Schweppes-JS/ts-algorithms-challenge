@@ -12,17 +12,17 @@
 
 
 // Solution №1
-const alfabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-const alfabetValue = {};
+const alfabet: Array<string> = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+const alfabetValue: {} = {};
 
 for (let i = 0; i < alfabet.length; i++) {
   alfabetValue[alfabet[i]] = i + 1;
 }
 
-function wordValue(arr) {
-  let totalValue = [];
+function wordValue(arr: Array<string>): Array<number> {
+  let totalValue: Array<number> = [];
   for (let i = 0; i < arr.length; i++) {
-    let sum = 0;
+    let sum: number = 0;
     for (let j = 0; j < arr[i].split('').length; j++) {
       if (arr[i].split('')[j] === ' ') {
         continue;
@@ -43,11 +43,11 @@ console.log(wordValue(["abc abc", "abc abc", "abc", "abc"]));
 
 
 // Solution №2
-const lettersValue = a =>
-  a.map((value, index) => value.replace(' ', '')
+const lettersValue = (a: Array<string>): Array<number> =>
+  a.map((value: string, index: number) => value.replace(' ', '')
     .split('')
-    .map(lettet => lettet.charCodeAt() - 96)
-    .reduce((accumulator, currentValue) => (accumulator + currentValue), 0) * (index + 1));
+    .map((lettet: string) => lettet.charCodeAt(0) - 96)
+    .reduce((accumulator: number, currentValue: number) => (accumulator + currentValue), 0) * (index + 1));
 
 // Test №2
 console.log(lettersValue(["codew ars", "abc", "xyz"]));

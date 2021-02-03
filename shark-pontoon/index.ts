@@ -21,9 +21,9 @@
 // If you make it, return "Alive!", if not, return "Shark Bait!".
 
 // My solution №1
-function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
-  const secondsToSurvive = pontoonDistance / youSpeed;
-  const seconsForDeath = dolphin
+function shark(pontoonDistance: number, sharkDistance: number, youSpeed: number, sharkSpeed: number, dolphin: boolean): string {
+  const secondsToSurvive: number = pontoonDistance / youSpeed;
+  const seconsForDeath: number = dolphin
     ? sharkDistance / (sharkSpeed / 2)
     : sharkDistance / sharkSpeed;
   if (secondsToSurvive < seconsForDeath) {
@@ -39,7 +39,7 @@ console.log(shark(7, 55, 4, 16, true));
 console.log(shark(24, 0, 4, 8, true));
 
 // My solution №2
-const salvation = (pD, sD, yS, sS, d) =>
+const salvation = (pD: number, sD: number, yS: number, sS: number, d: boolean): string =>
   pD / yS < sD / (sS / (d ? 2 : 1)) ? "Alive!" : "Shark Bait";
 
 // Test №2

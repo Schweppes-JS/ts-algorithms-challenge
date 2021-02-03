@@ -4,10 +4,10 @@
 
 
 // // Solution №1
-function findOdd(array) {
-    const uniqueArray = [...new Set(array)];
+function findOdd(array: number[]): number {
+    const uniqueArray: number[] = [...new Set(array)];
     for (let i = 0; i < uniqueArray.length; i++) {
-        let counter = array.reduce((sum, current) => {
+        let counter: number = array.reduce((sum: number, current: number): number => {
             if (uniqueArray[i] === current) {
                 sum++;
             }
@@ -29,13 +29,13 @@ console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]));
 
 
 // Solution №2
-function searchOdd(arr) {
+function searchOdd(arr: number[]): number {
     var obj = {};
-    arr.forEach(function (el) {
+    arr.forEach(function (el: number): void {
         obj[el] ? obj[el]++ : obj[el] = 1;
     });
-    for (prop in obj) {
-        if (obj[prop] % 2 !== 0) return prop;
+    for (let prop in obj) {
+        if (obj[prop] % 2 !== 0) return parseInt(prop);
     }
 }
 
@@ -49,8 +49,8 @@ console.log(searchOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]));
 
 
 // Solution №3
-function catchOutOdd(arr) {
-    return arr.find((item) => arr.filter(el => el == item).length % 2);
+function catchOutOdd(arr: number[]): number {
+    return arr.find((item: number): number => arr.filter((el: number): boolean => el == item).length % 2);
 }
 
 // Test №3
