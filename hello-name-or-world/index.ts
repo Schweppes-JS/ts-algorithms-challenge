@@ -10,7 +10,7 @@
 // hello ''       => "Hello, World!" # name is an empty String
 
 // My solution №1
-function hello(name = "World") {
+function hello(name: string = "World"): string {
   if (name === "") {
     return "Hello, World!";
   } else {
@@ -25,9 +25,8 @@ function hello(name = "World") {
 }
 
 // My solution №2
-const hi = (name) =>
-  `Hello, ${
-    name ? name[0].toUpperCase() + name.toLowerCase().slice(1) : "World"
+const hi = (name?: string): string =>
+  `Hello, ${name ? name[0].toUpperCase() + name.toLowerCase().slice(1) : "World"
   }`;
 
 // Test №1
