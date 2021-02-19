@@ -12,8 +12,8 @@
 
 
 // Solution №1
-function persistence(num) {
-    const string =  num.toString();
+function persistence(num: number): number {
+    const string = num.toString();
     if (string.length > 1) {
         let array = string.split('');
         let sum = parseInt(array[0]);
@@ -28,7 +28,7 @@ function persistence(num) {
             if (sum.toString().length > 1) {
                 multiplicator++;
                 array = sum.toString().split('');
-                sum = array[0];
+                sum = parseInt(array[0]);
                 calculation();
                 cycle();
             }
@@ -51,29 +51,15 @@ console.log(persistence(999));
 
 
 // Solution №2
-function multiplicator(num) {
+function multiplicator(num: number): number {
     for (var i = 0; num > 9; i++) {
-      num = num.toString().split('').reduce((t, c) => c * t);
+        num = parseInt(num.toString().split('').reduce((t: string, c: string): string => (parseInt(c) * parseInt(t)).toString()));
     }
     return i;
 }
 
 // Test №2
- console.log(multiplicator(39));
- console.log(multiplicator(4));
- console.log(multiplicator(25));
- console.log(multiplicator(999));
-
-
- // Solution №3
- const count = num => {
-    return `${num}`.length > 1 
-        ? 1 + persistence(`${num}`.split('').reduce((a, b) => a * +b)) 
-        : 0;
-}
- 
- // Test №3
-  console.log(count(39));
-  console.log(count(4));
-  console.log(count(25));
-  console.log(count(999));
+console.log(multiplicator(39));
+console.log(multiplicator(4));
+console.log(multiplicator(25));
+console.log(multiplicator(999));

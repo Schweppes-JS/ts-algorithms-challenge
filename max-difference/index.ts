@@ -10,7 +10,7 @@
 // maxDiff([1, 2, 3, -4]); //return 7, because 3 - (-4) ==
 
 // Solution №1
-function maxDiff(list) {
+function maxDiff(list: number[]): number {
   if (list.length < 1) {
     return 0;
   } else {
@@ -28,7 +28,7 @@ console.log(maxDiff([16]));
 console.log(maxDiff([]));
 
 // Solution №2
-const maxDifference = (list) =>
+const maxDifference = (list: number[]): number =>
   list.length < 1 ? 0 : Math.max(...list) - Math.min(...list);
 
 // Test №2
